@@ -74,12 +74,12 @@ def get_imsi():
         imsi_raw = (sc.read_binary(['3f00', '7f20', '6f07'])[0])
         imsi_len = imsi_raw[1]
         imsi = swap_nibbles(imsi_raw[2:])[1:]
-        print ("IMSI: %s" % imsi)
+        print("IMSI: %s" % imsi)
         return imsi
 
 # Ask the user for the name of the customer
 def get_name():
-        return raw_input("Enter subscriber name: ")
+        return input("Enter subscriber name: ")
 
 def get_next_extension(db):
         cur = db.cursor()
