@@ -2,11 +2,11 @@ BUILD_DIR           = ./build
 BUILD_CLASSES_DIR   = $(BUILD_DIR)/classes
 BUILD_JAVACARD_DIR  = $(BUILD_DIR)/javacard
 JAVACARD_SDK_DIR    ?= $(SIMTOOLS_DIR)/javacard
-JAVACARD_EXPORT_DIR ?= $(JAVACARD_SDK_DIR)/api21_export_files
+JAVACARD_EXPORT_DIR ?= $(JAVACARD_SDK_DIR)/api221_export_files
 ifdef COMSPEC
-	CLASSPATH	    = $(JAVACARD_SDK_DIR)/lib/api21.jar;$(JAVACARD_SDK_DIR)/lib/sim.jar
+	CLASSPATH	    = $(JAVACARD_SDK_DIR)/lib/api221.jar;$(JAVACARD_SDK_DIR)/lib/sim.jar
 else
-	CLASSPATH           = $(JAVACARD_SDK_DIR)/lib/api21.jar:$(JAVACARD_SDK_DIR)/lib/sim.jar
+	CLASSPATH           = $(JAVACARD_SDK_DIR)/lib/api221.jar:$(JAVACARD_SDK_DIR)/lib/sim.jar
 endif
 JFLAGS              = -target 1.1 -source 1.3 -g -d $(BUILD_CLASSES_DIR) -classpath "$(CLASSPATH)"
 JAVA                ?= java
