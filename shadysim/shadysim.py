@@ -249,9 +249,9 @@ class AppLoaderCommands(object):
 	def load_aid_raw(self, aid, executable, codeSize, volatileDataSize = 0, nonvolatileDataSize = 0):
 		loadParameters = 'c602' + ('%04x' % int(codeSize))
 		if volatileDataSize > 0:
-			loadParameters = loadParameters + 'c702' ('%04x' % volatileDataSize)
+			loadParameters = loadParameters + 'c702' + ('%04x' % volatileDataSize)
 		if nonvolatileDataSize > 0:
-			loadParameters = loadParameters + 'c802' ('%04x' % nonvolatileDataSize)
+			loadParameters = loadParameters + 'c802' + ('%04x' % nonvolatileDataSize)
 		loadParameters = 'ef' + ('%02x' % int(len(loadParameters) / 2)) + loadParameters
 		
 		# Install for load APDU, no security domain or hash specified
